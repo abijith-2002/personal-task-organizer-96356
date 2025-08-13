@@ -1,0 +1,164 @@
+/* Screen: Todo (figma_id 2102:6) */
+/* Frame base */
+.todo-screen.frame {
+  background: var(--color-0f0f0f);
+}
+
+/* Header group (height 98, style_1: bg #1a1a1a with 1px border #2a2a2a) */
+.header {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: var(--space-960);
+  height: var(--space-98);
+  background: var(--color-1a1a1a);
+  border-bottom: 1px solid var(--color-2a2a2a);
+}
+
+/* Header text group (x:76, y:23, w:293, h:51) */
+.header-text {
+  position: absolute;
+  left: 76px;
+  top: 23px;
+  width: var(--space-293);
+  height: var(--space-51_0000);
+}
+
+/* Title "Tasks" (typo_4) positioned at group origin */
+.header-text .title {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+/* Subtitle "1 of 3 completed" (typo_5) (top ≈ 33.8571 from group) */
+.header-text .subtitle {
+  position: absolute;
+  left: 0px;
+  top: 33.8571px;
+}
+
+/* Add button group (x:865, y:445, w/h:70, style_3 rounded 25, bg #bb86fc) */
+.add-btn {
+  position: absolute;
+  left: 865px;
+  top: 445px;
+  width: var(--space-70);
+  height: var(--space-70);
+  background: var(--color-bb86fc);
+  border: none;
+  border-radius: var(--radius-25);
+  cursor: pointer;
+}
+
+/* Plus icon (style_4: black) sized ~17.7333 and centered using pseudo-elements */
+.add-btn::before,
+.add-btn::after {
+  content: "";
+  position: absolute;
+  width: var(--space-17_7333);
+  height: 3px;
+  background: var(--color-000000);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.add-btn::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* Tasks: each .task-item is an absolutely positioned group with bg, checkbox/ellipse, text, and right icon */
+.task-item {
+  position: absolute;
+  width: var(--space-525);
+  height: var(--space-74);
+}
+
+/* Shared inner layers */
+.task-item .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--space-525);
+  height: var(--space-74);
+  background: var(--color-1a1a1a);        /* style_5 bg */
+  border: 1px solid var(--color-2a2a2a);  /* style_5 border */
+  border-radius: var(--radius-25);        /* style_5 radius */
+}
+
+/* Left ellipse (checkbox) baseline - style_6: 2px border #bb86fc */
+.task-item .task-check {
+  position: absolute;
+  left: 32px;
+  top: 29px;
+  width: var(--space-16);
+  height: var(--space-16);
+  border-radius: 50%;
+  border: 2px solid var(--color-bb86fc);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+.task-item .task-check::after {
+  content: "";
+  display: none; /* becomes visible when completed */
+}
+
+/* Title text (typo_6) */
+.task-item .task-title {
+  position: absolute;
+  left: 90.9253px;
+  top: 28px;
+  right: 40px; /* not from figma; prevents overflow */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Right-side small vector (style_7: #696969) ~10.3607 size at ~480.2184,31.8196 */
+.task-item .task-more {
+  position: absolute;
+  left: 480.2184px;
+  top: 31.8196px;
+  width: var(--space-10_3607);
+  height: var(--space-10_3607);
+  background: var(--color-696969);
+  border-radius: 2px;
+}
+
+/* Completed state: fills ellipse with #bb86fc and draws check sized ~6.7556x4.6222 at offsets */
+.task-item.completed .task-check {
+  background: var(--color-bb86fc);  /* style_8 fill */
+  border: none;
+}
+.task-item.completed .task-check::after {
+  display: block;
+  position: absolute;
+  left: var(--space-4_6222);
+  top: 5.6889px;
+  width: var(--space-6_7556);
+  height: var(--space-4_6222);
+  border: 1px solid var(--color-000000); /* style_9 stroke */
+  border-top: none;
+  border-right: none;
+  transform: rotate(-45deg);
+}
+
+/* Individual item positions from Figma coordinates (not used in React list; overridden in App.css) */
+/* task_item_1: (x:218, y:141) */
+#task_item_1 { left: 218px; top: 141px; }
+
+/* task_item_2: (x:218, y:224) */
+#task_item_2 { left: 218px; top: 224px; }
+
+/* task_item_3: (x:218, y:307) */
+#task_item_3 { left: 218px; top: 307px; }
+
+/* task_item_4: (x:218, y:390) preset to completed per design */
+#task_item_4 { left: 218px; top: 390px; }
+
+/* Optional hover to reflect interactiveness (not from Figma; non-intrusive) */
+.task-item .bg:hover {
+  border-color: var(--color-bb86fc);
+  transition: border-color 0.2s ease;
+}

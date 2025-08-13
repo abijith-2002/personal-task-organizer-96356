@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+/* Design System Tokens as CSS Variables */
+:root {
+  /* Colors */
+  --color-0f0f0f: #0f0f0f;
+  --color-1a1a1a: #1a1a1a;
+  --color-2a2a2a: #2a2a2a;
+  --color-ffffff: #ffffff;
+  --color-bb86fc: #bb86fc;
+  --color-000000: #000000;
+  --color-696969: #696969;
+  --color-0d0714: #0d0714;
+  --color-1d1825: #1d1825;
+  --color-15101c: #15101c;
+  --color-9e78cf: #9e78cf;
+  --color-78cfb0: #78cfb0;
+  --color-777777: #777777;
+  --color-3e1671: #3e1671;
+
+  /* Typography tokens (family + specific type styles) */
+  --font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* typo_4 */
+  --typo-4-size: 24px;
+  --typo-4-weight: 400;
+  --typo-4-line-height: 29.0455px;
+  --typo-4-color: var(--color-ffffff);
+
+  /* typo_5 */
+  --typo-5-size: 12px;
+  --typo-5-weight: 400;
+  --typo-5-line-height: 14.5227px;
+  --typo-5-color: var(--color-ffffff);
+
+  /* typo_6 */
+  --typo-6-size: 16px;
+  --typo-6-weight: 700;
+  --typo-6-line-height: 19.3636px;
+  --typo-6-color: var(--color-ffffff);
+
+  /* Spacing tokens (rounded to 4 decimals where applicable) */
+  --space-4_6222: 4.6222px;
+  --space-6_7556: 6.7556px;
+  --space-8: 8px;
+  --space-10_3607: 10.3607px;
+  --space-11: 11px;
+  --space-11_3778: 11.3778px;
+  --space-12_3759: 12.3759px;
+  --space-16: 16px;
+  --space-16_5: 16.5px;
+  --space-17: 17px;
+  --space-17_1429: 17.1429px;
+  --space-17_1883: 17.1883px;
+  --space-17_7333: 17.7333px;
+  --space-17_875: 17.875px;
+  --space-19: 19px;
+  --space-22: 22px;
+  --space-24: 24px;
+  --space-26: 26px;
+  --space-28: 28px;
+  --space-30: 30px;
+  --space-31: 31px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-43_8667: 43.8667px;
+  --space-46_1436: 46.1436px;
+  --space-51_0000: 51px;
+  --space-64: 64px;
+  --space-67: 67px;
+  --space-68: 68px;
+  --space-70: 70px;
+  --space-74: 74px;
+  --space-75: 75px;
+  --space-95: 95px;
+  --space-98: 98px;
+  --space-101: 101px;
+  --space-110: 110px;
+  --space-114: 114px;
+  --space-117: 117px;
+  --space-221: 221px;
+  --space-293: 293px;
+  --space-343_1495: 343.1495px;
+  --space-381: 381px;
+  --space-384: 384px;
+  --space-390_9049: 390.9049px;
+  --space-432: 432px;
+  --space-525: 525px;
+  --space-540: 540px;
+  --space-583: 583px;
+  --space-758: 758px;
+  --space-960: 960px;
+  --space-1024: 1024px;
+  --space-1440: 1440px;
+
+  /* Radius tokens */
+  --radius-5: 5px;
+  --radius-10: 10px;
+  --radius-20: 20px;
+  --radius-25: 25px;
+}
+
+/* Base/Reset */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-0f0f0f);
+  color: var(--color-ffffff);
+  font-family: var(--font-family-base);
+}
+
+.page {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--space-24);
+}
+
+/* Frame container for each screen (960x540 as per Figma) */
+.frame {
+  position: relative;
+  width: var(--space-960);
+  min-height: var(--space-540);
+  background: var(--color-0f0f0f);
+  overflow: hidden;
+}
+
+/* Typography helpers mapped from tokens */
+.typo-4 {
+  font-family: var(--font-family-base);
+  font-size: var(--typo-4-size);
+  font-weight: var(--typo-4-weight);
+  line-height: var(--typo-4-line-height);
+  color: var(--typo-4-color);
+  text-align: left;
+  margin: 0;
+}
+
+.typo-5 {
+  font-family: var(--font-family-base);
+  font-size: var(--typo-5-size);
+  font-weight: var(--typo-5-weight);
+  line-height: var(--typo-5-line-height);
+  color: var(--typo-5-color);
+  text-align: left;
+  margin: 0;
+}
+
+.typo-6 {
+  font-family: var(--font-family-base);
+  font-size: var(--typo-6-size);
+  font-weight: var(--typo-6-weight);
+  line-height: var(--typo-6-line-height);
+  color: var(--typo-6-color);
+  text-align: left;
+  margin: 0;
+}
+
+/* Accessible focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-bb86fc);
+  outline-offset: 2px;
+}
